@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigamePool:
   - {fileID: 11400000, guid: be9c39f038ddd0c40a557c2751a83ebe, type: 2}
+  - {fileID: 11400000, guid: 47177c3e66769264f9abcf1dfef2558b, type: 2}
   lives: 5
   score: 0
   nextMinigame: {fileID: 0}

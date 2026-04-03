@@ -19,7 +19,7 @@ public class NoDesmayarseMinigame : MinigameBase
         clicksRequired += GameManager.Instance.score * 2;
 
         currentClicks = 0;
-        Debug.Log($"Dificultad aumentada: Clicks necesarios = {clicksRequired}");
+        clicks.text = $"Clicks: {currentClicks}/{clicksRequired}";
     }
 
     protected override void Update()
