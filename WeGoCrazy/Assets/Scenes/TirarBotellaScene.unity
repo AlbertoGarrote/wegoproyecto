@@ -736,6 +736,7 @@ MonoBehaviour:
   targetZone: {fileID: 304060231}
   fillSpeed: 1.5
   successThreshold: 0.08
+  lanzamientos: {fileID: 2099385163}
 --- !u!1 &1363380364
 GameObject:
   m_ObjectHideFlags: 0

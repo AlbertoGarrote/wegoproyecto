@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TirarBotellaScene.unity
     guid: 7000daac0dd8f3f4eb44e64ea5a0210c
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 59ba2e2d028193d4d9882b73357e1114
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

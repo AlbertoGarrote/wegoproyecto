@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,14 @@ public class TirarBotellaMinigame : MinigameBase
 
     [Header("Ajustes de Juego")]
     public float fillSpeed = 1.5f;
-    public float successThreshold = 0.08f; // Margen de acierto
+    public float successThreshold = 0.1f; // Margen de acierto
 
     private float targetValue;
     private bool isCharging = false;
     private int goalsRequired;
     private int currentGoals = 0;
+
+    public TextMeshProUGUI lanzamientos;
 
     protected override void Start()
     {
@@ -22,6 +25,8 @@ public class TirarBotellaMinigame : MinigameBase
 
         // El número de aciertos sube con el score global
         goalsRequired = 2 + (GameManager.Instance.score / 3);
+
+        lanzamientos.text = $"Clicks: {currentGoals}/{goalsRequired}";
 
         SetupNewTarget();
     }
@@ -68,7 +73,7 @@ public class TirarBotellaMinigame : MinigameBase
         if (difference <= successThreshold)
         {
             currentGoals++;
-            Debug.Log($"¡Diana! {currentGoals}/{goalsRequired}");
+            lanzamientos.text = $"Lanzamientos: {currentGoals}/{goalsRequired}";
 
             if (currentGoals >= goalsRequired)
             {

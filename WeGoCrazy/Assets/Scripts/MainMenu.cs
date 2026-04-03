@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,5 +10,16 @@ public class MainMenu : MonoBehaviour
         {
             GameManager.Instance.StartGameCycle();
         }
+    }
+
+    public void Creditos()
+    {
+        SceneManager.LoadScene("Creditos");
+    }
+
+    public void Salir()
+    {
+        Debug.Log("Saliendo del juego...");
+        Application.Quit();
     }
 }
