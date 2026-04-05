@@ -80,11 +80,11 @@ public class SelfieMinigame : MinigameBase
     // Detección de si está en el área
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Monstro")) isAlienInside = true;
+        if (collision.CompareTag("monstro")) isAlienInside = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Monstro")) isAlienInside = false;
+        if (collision.CompareTag("monstro")) isAlienInside = false;
     }
 }
