@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 59ba2e2d028193d4d9882b73357e1114
+  - enabled: 1
+    path: Assets/Scenes/SelfieScene.unity
+    guid: 767d202b588155847868678e52415051
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
