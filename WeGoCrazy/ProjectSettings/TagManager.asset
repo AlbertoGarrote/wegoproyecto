@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - monstro
+  - JugadorI
+  - JugadorR
+  - 'MazeWall '
+  - MazeGoal
   layers:
   - Default
   - TransparentFX

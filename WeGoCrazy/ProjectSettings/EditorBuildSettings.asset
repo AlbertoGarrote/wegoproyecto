@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelfieScene.unity
     guid: 767d202b588155847868678e52415051
+  - enabled: 1
+    path: Assets/Scenes/LaberintoScene.unity
+    guid: a64331e46ff53e04b935d7cf34880a3c
+  - enabled: 1
+    path: Assets/Scenes/BeerLiftScene.unity
+    guid: b90ad92ebac651d4ea8c308e1c512761
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

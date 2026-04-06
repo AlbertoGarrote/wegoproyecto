@@ -149,9 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigamePool:
-  - {fileID: 11400000, guid: d248310b097cf6b44b9fd1470405e18a, type: 2}
-  lives: 5
+  - {fileID: 11400000, guid: 770f68738f3a8ac47b72096cdf2ec35a, type: 2}
   score: 0
+  lives: 5
+  globalHallucinationIntensity: 0.25
+  hallucinationIncreasePerWin: 1
   nextMinigame: {fileID: 0}
 --- !u!4 &15047090
 Transform:

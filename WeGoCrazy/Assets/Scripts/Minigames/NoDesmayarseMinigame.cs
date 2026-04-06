@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NoDesmayarseMinigame : MinigameBase
 {
-    [Header("Mecánica Mash")]
+    [Header("Mecanica Mash")]
     public int clicksRequired = 20;
     public TextMeshProUGUI clicks;
 
@@ -11,28 +11,24 @@ public class NoDesmayarseMinigame : MinigameBase
 
     protected override void Start()
     {
-        // 1. Ejecutamos el Start del padre (configura el tiempo)
         base.Start();
 
-        // 2. Ajustamos los clicks según el score
-        // Ejemplo: 10 clicks base + 2 por cada punto de score
-        clicksRequired += GameManager.Instance.score * 2;
+        int currentScore = (GameManager.Instance != null) ? GameManager.Instance.score : 0;
+        clicksRequired += currentScore * 2;
 
         currentClicks = 0;
-        clicks.text = $"Clicks: {currentClicks}/{clicksRequired}";
+        if (clicks != null) clicks.text = $"Clicks: {currentClicks}/{clicksRequired}";
     }
 
     protected override void Update()
     {
-        // Ejecutamos el Update de la base (el que maneja el tiempo)
         base.Update();
-
         if (!isGameActive) return;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             currentClicks++;
-            clicks.text = $"Clicks: {currentClicks}/{clicksRequired}";
+            if (clicks != null) clicks.text = $"Clicks: {currentClicks}/{clicksRequired}";
 
             if (currentClicks >= clicksRequired)
             {

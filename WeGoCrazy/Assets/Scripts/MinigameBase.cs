@@ -5,9 +5,9 @@ using TMPro;        // Para el texto
 public abstract class MinigameBase : MonoBehaviour
 {
     [Header("UI del Minijuego")]
-    public Slider timeBar;            // Arrastra el Slider aquí
+    public Slider timeBar;            // Arrastra el Slider aquï¿½
 
-    [Header("Configuración Base")]
+    [Header("Configuraciï¿½n Base")]
     public MinigameData minigameData;
     protected float timer;
     protected float maxTime; // Necesario para calcular el porcentaje de la barra
@@ -17,11 +17,12 @@ public abstract class MinigameBase : MonoBehaviour
     {
         if (minigameData == null) return;
 
-        // --- LÓGICA DE DIFICULTAD ESCALABLE ---
+        // --- Lï¿½GICA DE DIFICULTAD ESCALABLE ---
         // Supongamos que el tiempo base son 5 segundos. 
         // Por cada punto, restamos 0.2 segundos
         float reductionPerPoint = 0.2f;
-        maxTime = Mathf.Max(1.5f, 5f - (GameManager.Instance.score * reductionPerPoint));
+        int currentScore = (GameManager.Instance != null) ? GameManager.Instance.score : 0;
+        maxTime = Mathf.Max(1.5f, 5f - (currentScore * reductionPerPoint));
 
         timer = maxTime;
 
@@ -64,6 +65,14 @@ public abstract class MinigameBase : MonoBehaviour
     {
         if (!isGameActive) return;
         isGameActive = false;
-        GameManager.Instance.OnMinigameEnded(win);
+        
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnMinigameEnded(win);
+        }
+        else
+        {
+            Debug.LogWarning("GameManager no encontrado. Â¿EstÃ¡s testeando la escena sola? (Resultado: " + (win ? "Ganaste" : "Perdiste") + ")");
+        }
     }
 }
