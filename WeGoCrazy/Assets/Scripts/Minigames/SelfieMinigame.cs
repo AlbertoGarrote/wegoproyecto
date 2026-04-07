@@ -6,7 +6,7 @@ public class SelfieMinigame : MinigameBase
 {
     [Header("Ajustes del Alien")]
     public GameObject alien;
-    public float speed = 5f;
+    public float speed = 30f;
     public Collider2D photoArea; // El collider del móvil en el centro
 
     [Header("Movimiento")]
@@ -52,13 +52,6 @@ public class SelfieMinigame : MinigameBase
         if (pos.x < 0.05f || pos.x > 0.95f) direction.x *= -1;
         if (pos.y < 0.05f || pos.y > 0.95f) direction.y *= -1;
 
-        // Obligar al alien a pasar por el centro si el tiempo se agota
-        // Si queda menos del 30% del tiempo, corregimos la trayectoria hacia el centro
-        if (timer < maxTime * 0.3f)
-        {
-            Vector2 haciaElCentro = (photoArea.transform.position - alien.transform.position).normalized;
-            direction = Vector2.Lerp(direction, haciaElCentro, Time.deltaTime * 2f);
-        }
     }
 
     void TomarFoto()

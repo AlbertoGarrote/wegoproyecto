@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0ef1eeabd222a3c4e88638f4535f1946
+guid: ef221f10a28b8494f830f3ca9d546512
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6674868978544099146
-    second: placeholder_0
+      213: -4445470282790714816
+    second: intento de mano_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: placeholder_0
+      name: intento de mano_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
-        width: 439
-        height: 458
+        width: 49
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b0ca9b670a1e53a0800000000000000
-      internalID: -6674868978544099146
+      spriteID: 04244b6b4548e42c0800000000000000
+      internalID: -4445470282790714816
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      placeholder_0: -6674868978544099146
+      intento de mano_0: -4445470282790714816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
