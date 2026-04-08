@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 0ef1eeabd222a3c4e88638f4535f1946
+guid: b857d1b8b0b13ca4e8dfc3b9166b1de6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6674868978544099146
-    second: placeholder_0
+      213: -2246677069825743643
+    second: intento de mano pero con viento_0
+  - first:
+      213: 5713884677438003244
+    second: intento de mano pero con viento_1
+  - first:
+      213: -2619950922481221186
+    second: intento de mano pero con viento_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: placeholder_0
+      name: intento de mano pero con viento_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 439
-        height: 458
+        x: 31
+        y: 76
+        width: 7
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b0ca9b670a1e53a0800000000000000
-      internalID: -6674868978544099146
+      spriteID: 5e46500cb1332d0e0800000000000000
+      internalID: -2246677069825743643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: intento de mano pero con viento_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 49
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c285d3637dbcb4f40800000000000000
+      internalID: 5713884677438003244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: intento de mano pero con viento_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 71
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1cc80648014abd0800000000000000
+      internalID: -2619950922481221186
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      placeholder_0: -6674868978544099146
+      intento de mano pero con viento_0: -2246677069825743643
+      intento de mano pero con viento_1: 5713884677438003244
+      intento de mano pero con viento_2: -2619950922481221186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
