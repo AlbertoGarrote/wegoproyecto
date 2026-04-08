@@ -27,59 +27,58 @@ namespace WeGoCrazy.Minigames.BeerLift
         protected override void Start()
         {
             base.Start();
+            liftProgress = 50f; // Empezamos a la mitad para dar margen
 
-            // Evitamos que Unity sobreescriba en el Inspector el progreso y mate al jugar en el primer frame
-            liftProgress = 30f;
-
-            // Obtenemos intensidad global
-            float intensity = (GameManager.Instance != null) ? GameManager.Instance.globalHallucinationIntensity : 0.3f;
             int currentScore = (GameManager.Instance != null) ? GameManager.Instance.score : 0;
 
-            // Ajuste del tiempo escalable
-            maxTime = Mathf.Max(5f, maxBeerTime - (currentScore * 0.5f));
+            // --- TIEMPO MUCHO MENOR ---
+            // Empezamos en 5 segundos y baja 0.3s por cada punto, mínimo 2 segundos.
+            maxTime = Mathf.Max(2f, 5f - (currentScore * 0.3f));
             timer = maxTime;
 
             if (timeBar != null) { timeBar.maxValue = maxTime; timeBar.value = maxTime; }
-            if (timeText != null) timeText.text = $"Tiempo: {timer:F0}/{maxTime:F0}";
 
-            // Aplicamos la alucinación visual
-            onHallucinationChanged?.Invoke(intensity);
-
-            isGameActive = true; // Forzamos arranque
+            isGameActive = true;
         }
+
 
         protected override void Update()
         {
-            base.Update();
+            // NO llamamos a base.Update() si queremos cambiar qué pasa al llegar a 0
+            // Copiamos la lógica base pero cambiando el resultado del timer
+
             if (!isGameActive) return;
 
-            // Actualizar cuenta atrás del tiempo
-            if (timeText != null) 
+            timer -= Time.deltaTime;
+
+            // Actualizamos la barra de tiempo (si existe)
+            if (timeBar != null) timeBar.value = timer;
+
+            if (timeText != null)
             {
-                timeText.text = $"Tiempo: {timer:F1}/{maxTime:F0}";
+                timeText.text = $"¡AGUANTA!: {timer:F1}s";
             }
 
-            // Mantenemos la alucinación constante por si cambia en directo
-            float intensity = (GameManager.Instance != null) ? GameManager.Instance.globalHallucinationIntensity : 0.3f;
-            onHallucinationChanged?.Invoke(intensity);
+            // --- CAMBIO CLAVE: Si el tiempo se acaba, ¡GANAS! ---
+            if (timer <= 0)
+            {
+                timer = 0;
+                WinGame();
+            }
         }
 
         public void AddLift(float delta)
         {
             if (!isGameActive) return;
-            
+
             liftProgress = Mathf.Clamp(liftProgress + delta, 0, maxLift);
             onLiftProgressUpdated?.Invoke(liftProgress / maxLift);
 
-            // Condición de victoria: Arriba del todo
-            if (liftProgress >= sipThreshold)
+            // Quitamos la condición de victoria por progreso (liftProgress >= sipThreshold)
+            // Ahora solo se puede perder si cae el brazo
+            if (liftProgress <= 0f)
             {
-                WinGame();
-            }
-            // Condición de derrota: Abajo del todo
-            else if (liftProgress <= 0f)
-            {
-                LoseGame("¡El brazo se te cayó por gravedad a 0 de progreso! (liftProgress = 0)");
+                LoseGame("¡Se te cansó el brazo!");
             }
         }
 

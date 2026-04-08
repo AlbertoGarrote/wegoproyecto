@@ -8,14 +8,14 @@ namespace WeGoCrazy.Minigames.BeerLift
         public BeerLiftManager manager;
         
         [Header("Physics (QWOP style)")]
-        public float balanceForce = 1500f;
+        public float balanceForce = 500f;
         public float liftForce = 25f;
         public float armFallGravity = 10f;
         
         [Header("Shroom Effects")]
-        public float randomSwayFrequency = 1.5f;
-        public float baseSwayAmplitude = 400f; // El desequilibrio inicial garantizado (más bajito)
-        public float extraSwayPerIntensity = 50f; // La fuerza brutal que se irá sumando a medida que ganes rondas
+        public float randomSwayFrequency = 0.75f;
+        public float baseSwayAmplitude = 10f; // El desequilibrio inicial garantizado (más bajito)
+        public float extraSwayPerIntensity = 5f; // La fuerza brutal que se irá sumando a medida que ganes rondas
         
         private Rigidbody2D rb;
         private float noiseOffset;
