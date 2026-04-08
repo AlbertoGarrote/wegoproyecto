@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e90e8448fdffe4d966872057af1b7d, type: 3}
   m_Name: TirarBotella
   m_EditorClassIdentifier: 
-  gameName: Hostia puta un monstro
+  gameName: HOSTIA UN MONSTRUO
   sceneName: TirarBotellaScene
-  instruction: MANTEN EL CLICK Y SUELTALO EN LA ZONA SOMBREADA PARA TIRARLE UN BOTELLAZO
-    AL BICHO
+  instruction: "Mant\xE9n click izquierdo y su\xE9ltalo en la zona amarilla para
+    lanzar una botella."

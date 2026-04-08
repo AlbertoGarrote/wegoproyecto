@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e90e8448fdffe4d966872057af1b7d, type: 3}
   m_Name: Laberinto
   m_EditorClassIdentifier: 
-  gameName: Laberinto
+  gameName: "VETE A PILLAR HONGOS QUE TE EST\xC1S QEUDANDO SIN."
   sceneName: LaberintoScene
-  instruction: polla y guebos
+  instruction: "Mu\xE9vete con WASD para llegar a la meta sin chocarte."

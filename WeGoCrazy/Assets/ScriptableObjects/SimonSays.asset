@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e90e8448fdffe4d966872057af1b7d, type: 3}
   m_Name: SimonSays
   m_EditorClassIdentifier: 
-  gameName: SimonSays
+  gameName: Simon dice
   sceneName: SimonSaysScene
-  instruction: que dice simon
+  instruction: "Quien co\xF1o es Sim\xF3n y por qu\xE9 dice cosas?"

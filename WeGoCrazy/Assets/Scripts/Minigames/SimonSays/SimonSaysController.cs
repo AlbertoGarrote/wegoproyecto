@@ -198,24 +198,6 @@ namespace WeGoCrazy.Minigames.SimonSays
         {
             if (!isGameActive) return;
             isPlayerTurn = false;
-            StartCoroutine(ShowGameOverFeedback());
-        }
-
-        private IEnumerator ShowGameOverFeedback()
-        {
-            showingFeedback = true;
-            isGameActive = false; // Detenemos el juego para que no cuente más inputs
-            
-            if (timeText != null) 
-            {
-                timeText.text = "¡ERROR!";
-                timeText.color = Color.red;
-            }
-            
-            Debug.Log("[Simon] Te equivocaste. Fin del juego.");
-            onGameOver?.Invoke();
-            
-            yield return new WaitForSeconds(1.5f);
             EndMinigame(false);
         }
     }

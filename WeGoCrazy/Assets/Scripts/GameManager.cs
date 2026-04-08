@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public void StartGameCycle()
     {
         score = 0;
-        lives = 3;
+        lives = 5;
         globalHallucinationIntensity = 0.25f;
         PrepareNextMinigame();
     }

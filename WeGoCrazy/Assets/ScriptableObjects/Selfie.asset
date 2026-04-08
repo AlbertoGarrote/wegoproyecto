@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameName: SI HOMBRE, MINIATURA! MINIATURA!
   sceneName: SelfieScene
-  instruction: "Haz click justo cunado el monstruo est\xE9 encuadrao en la foto"
+  instruction: "Haz click justo cuando el monstruo est\xE9 encuadrao en la foto"

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e90e8448fdffe4d966872057af1b7d, type: 3}
   m_Name: BeerLift
   m_EditorClassIdentifier: 
-  gameName: Beeeeeer
+  gameName: EQUILIBRISMO DE CERVEZA.
   sceneName: BeerLiftScene
-  instruction: cervecita
+  instruction: "La cerveza tiene tendencia a caerse. Intenta mantenerla de pie con
+    A y D. Tambi\xE9n debes mantenerla lo m\xE1s arriba posible con Espacio. Espabila."
