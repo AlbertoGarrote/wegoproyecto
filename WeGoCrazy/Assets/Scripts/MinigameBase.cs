@@ -17,6 +17,8 @@ public abstract class MinigameBase : MonoBehaviour
     {
         if (minigameData == null) return;
 
+        GameManager.Instance.PlaySound("wego");
+
         // --- L�GICA DE DIFICULTAD ESCALABLE ---
         // Supongamos que el tiempo base son 5 segundos. 
         // Por cada punto, restamos 0.2 segundos

@@ -4,6 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // --- SISTEMA DE SONIDO ---
+    [System.Serializable]
+    public struct SoundEffect
+    {
+        public string name;      // Nombre para llamar al sonido (ej: "Click", "Win")
+        public AudioClip clip;   // El archivo de audio
+    }
+
+    [Header("Configuración de Sonido")]
+    public List<SoundEffect> soundLibrary; // Lista de sonidos configurables
+    private AudioSource audioSource;       // El componente que reproduce
+
     [Header("Pool de Minijuegos")]
     public List<MinigameData> minigamePool;
 
@@ -28,8 +40,30 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Inicializamos el AudioSource automáticamente
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
+    // --- FUNCIÓN PARA REPRODUCIR SONIDOS ---
+    public void PlaySound(string soundName)
+    {
+        // Buscamos el sonido por nombre en la lista
+        SoundEffect s = soundLibrary.Find(x => x.name == soundName);
+
+        if (s.clip != null)
+        {
+            // PlayOneShot permite que varios sonidos suenen a la vez sin cortarse
+            audioSource.PlayOneShot(s.clip);
+        }
+        else
+        {
+            Debug.LogWarning("Sonido no encontrado o sin clip: " + soundName);
+        }
+    }
+
+    // --- LÓGICA DE JUEGO ---
     public void StartGameCycle()
     {
         score = 0;
@@ -43,19 +77,19 @@ public class GameManager : MonoBehaviour
         if (!success)
         {
             lives--;
-            Debug.Log("[GameManager] Pierdes una vida! Vidas restantes: " + lives);
+            PlaySound("error"); // Ejemplo de llamada
         }
         else
         {
             score++;
             globalHallucinationIntensity += hallucinationIncreasePerWin;
-            Debug.Log("[GameManager] Punto ganado! Intensidad de alucinacion actual: " + globalHallucinationIntensity);
+            PlaySound("ganar"); // Ejemplo de llamada
         }
 
         if (lives <= 0)
         {
-            Debug.Log("Game Over");
-            SceneManager.LoadScene("MainMenu");
+            PlaySound("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
         else
         {
@@ -66,9 +100,7 @@ public class GameManager : MonoBehaviour
     private void PrepareNextMinigame()
     {
         if (minigamePool == null || minigamePool.Count == 0) return;
-
         MinigameData selected = minigamePool[Random.Range(0, minigamePool.Count)];
-
         if (minigamePool.Count > 1)
         {
             while (selected == lastMinigame)
@@ -76,7 +108,6 @@ public class GameManager : MonoBehaviour
                 selected = minigamePool[Random.Range(0, minigamePool.Count)];
             }
         }
-
         lastMinigame = selected;
         nextMinigame = selected;
         SceneManager.LoadScene("Transition");
